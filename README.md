@@ -1,5 +1,5 @@
-## Recrutement_app
-Team Projet
+# Recrutement_app
+## Team Projet
 
 Structure of DB:
 
@@ -8,7 +8,7 @@ Candidat
 
 CREATE TABLE `entreprise` (
 
-'id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL AUTO_INCREMENT,
 
 `email` varchar(50) NOT NULL,
 `password` varchar(50) NOT NULL,
@@ -69,7 +69,7 @@ ________________________________________________
 
 CREATE TABLE `demande` (
 
-'id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL AUTO_INCREMENT,
 
 `nomCandidat` varchar(50) NOT NULL,
 `prenomCandidat` varchar(50) NOT NULL,
