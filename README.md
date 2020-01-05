@@ -1,5 +1,5 @@
 # Recrutement_app
-## Team Projet
+## Team Project
 
 Structure of DB:
 
