@@ -49,7 +49,7 @@ ____________________________________________________
 CREATE TABLE `offre` (
 `id` int(11) NOT NULL AUTO_INCREMENT,,
 `date_ajout` date NOT NULL,
-`estOuvert` int(11) NOT NULL,
+`estOuvert` BOOLEAN NOT NULL,
 `niveau_etude` varchar(200) NOT NULL,
 `salaireMax` int(11) NOT NULL,
 `nbrePostes` int(11) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `offre` (
 `adresse` varchar(200) NOT NULL,
 `ville` varchar(200) NOT NULL,
 `Details` varchar(500) NOT NULL,
-`id_entreprise` varchar(50) NOT NULL,
+`id_entreprise` int(11) NOT NULL,
 
 );
 ALTER TABLE `offre` ADD PRIMARY KEY (`id`);
