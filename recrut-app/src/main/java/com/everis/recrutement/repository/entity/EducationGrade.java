@@ -2,9 +2,7 @@ package com.everis.recrutement.repository.entity;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,25 +10,27 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Sector 
-{
+public class EducationGrade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String sector;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name ="Sector_id")
+	private String grade;
+	@OneToMany()
+	@JoinColumn(name ="Education_grade_id")
+	private List<Candidat> candidats ;
+	@OneToMany()
+	@JoinColumn(name ="Education_grade_id")
 	private List<Offer> offers ;
 	
 	
-	public Sector() {
+	public EducationGrade() {
 		super();
 	}
 	
-	public Sector(Long id, String sector) {
+	public EducationGrade(Long id, String grade) {
 		super();
 		this.id = id;
-		this.sector = sector;
+		this.grade = grade;
 	}
 	
 	
@@ -40,16 +40,11 @@ public class Sector
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getSector() {
-		return sector;
+	public String getGrade() {
+		return grade;
 	}
-	public void setSector(String sector) {
-		this.sector = sector;
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
-	
-	
-	
-	
-	
 	
 }

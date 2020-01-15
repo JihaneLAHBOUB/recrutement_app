@@ -1,5 +1,6 @@
 package com.everis.recrutement.repository.entity;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,30 +13,37 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Company 
+public class Candidat 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String firstName;
+	private String lastName;
+	private LocalDate dateOfBirth;
 	private String email;
 	private String phone;
-	private String photo;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name ="CompanyId")
-	private List<Offer> offers ;
+	@JoinColumn(name ="Candidate_id")
+	private List<AppliedOffer> appliedOffers ;
+	private String CV;
+	private String photo;
 	
 	
-	public Company() {
+	public Candidat() {
 		super();
 	}
 	
-	public Company(Long id, String name, String email, String phone, String photo) {
+	public Candidat(Long id, String firstName, String lastName, LocalDate dateOfBirth, String email, String phone,
+			String cV, String photo) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
 		this.email = email;
 		this.phone = phone;
+		CV = cV;
 		this.photo = photo;
 	}
 	
@@ -46,11 +54,23 @@ public class Company
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	public String getEmail() {
 		return email;
@@ -64,13 +84,18 @@ public class Company
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	public String getCV() {
+		return CV;
+	}
+	public void setCV(String cV) {
+		CV = cV;
+	}
 	public String getPhoto() {
 		return photo;
 	}
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	
 	
 	
 	
