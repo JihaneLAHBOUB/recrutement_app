@@ -12,7 +12,8 @@ public class AppliedOfferTransformer extends AbstractTransformers<AppliedOfferDT
 		
 		dto.setId(entity.getId());
 		dto.setState(entity.isState());
-		
+		dto.setIdCandidat(entity.getIdCandidat());
+		dto.setIdOffer(entity.getIdOffer());
 		return dto;
 	}
 
@@ -23,7 +24,8 @@ public class AppliedOfferTransformer extends AbstractTransformers<AppliedOfferDT
 		
 		entity.setId(dto.getId());
 		entity.setState(dto.isState());
-		
+		entity.setIdCandidat(dto.getIdCandidat());
+		entity.setIdOffer(dto.getIdOffer());
 		return entity;
 	}
 

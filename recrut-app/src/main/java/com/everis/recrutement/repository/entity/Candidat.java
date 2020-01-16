@@ -1,16 +1,11 @@
 package com.everis.recrutement.repository.entity;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Candidat 
@@ -23,9 +18,9 @@ public class Candidat
 	private LocalDate dateOfBirth;
 	private String email;
 	private String phone;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name ="Candidate_id")
-	private List<AppliedOffer> appliedOffers ;
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinColumn(name ="Candidate_id")
+//	private List<AppliedOffer> appliedOffers ;
 	private String CV;
 	private String photo;
 	

@@ -1,9 +1,7 @@
 package com.everis.recrutement.service.dto;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import com.everis.recrutement.repository.entity.AppliedOffer;
 
 public class OfferDTO {
 
@@ -13,7 +11,7 @@ public class OfferDTO {
 	private LocalDate publishingDay;
 	private String position;
 
-	private List<AppliedOfferDTO> appliedOffersDTOList;
+//	private List<AppliedOfferDTO> appliedOffersDTOList;
 
 	public OfferDTO() {
 		super();
@@ -68,18 +66,18 @@ public class OfferDTO {
 		this.position = position;
 	}
 
-	public List<AppliedOfferDTO> getAppliedOffersList() {
-		return appliedOffersDTOList;
-	}
-
-	public void setAppliedOffersList(List<AppliedOfferDTO> appliedOffers) {
-		this.appliedOffersDTOList = appliedOffers;
-	}
+//	public List<AppliedOfferDTO> getAppliedOffersList() {
+//		return appliedOffersDTOList;
+//	}
+//
+//	public void setAppliedOffersList(List<AppliedOfferDTO> appliedOffers) {
+//		this.appliedOffersDTOList = appliedOffers;
+//	}
 
 	@Override
 	public String toString() {
 		return "OfferDTO [id=" + id + ", offerName=" + offerName + ", description=" + description + ", publishingDay="
-				+ publishingDay + ", position=" + position + ", appliedOffers=" + appliedOffersDTOList + "]";
+				+ publishingDay + ", position=" + position + "]";
 	}
 
 }

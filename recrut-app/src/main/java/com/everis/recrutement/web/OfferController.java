@@ -46,12 +46,12 @@ public class OfferController {
 	}
 
 	@PutMapping("/updateOffer/{id}")
-	private List<OfferDTO> updateOffers(@PathVariable("id") Long id, @RequestBody OfferDTO offerDTO) {
+	private OfferDTO updateOffers(@PathVariable("id") Long id, @RequestBody OfferDTO offerDTO) {
 		offerDTO.setId(id);
-		offerService.update(offerDTO);
-		List<OfferDTO> listOfferDTO = offerService.getAll();
+		OfferDTO offerDto = offerService.update(offerDTO);
+//		List<OfferDTO> listOfferDTO = offerService.getAll();
 
-		return listOfferDTO;
+		return offerDto;
 
 	}
 

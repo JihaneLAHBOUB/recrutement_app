@@ -5,7 +5,7 @@ import com.everis.recrutement.service.dto.OfferDTO;
 
 public class OfferTransformer extends AbstractTransformers<OfferDTO, Offer> {
 
-	private AppliedOfferTransformer transformer = new AppliedOfferTransformer() ;
+//	private AppliedOfferTransformer transformer = new AppliedOfferTransformer() ;
 	
 	@Override
 	public OfferDTO toDTO(Offer entity) {
@@ -17,9 +17,9 @@ public class OfferTransformer extends AbstractTransformers<OfferDTO, Offer> {
 		dto.setPosition(entity.getPosition());
 		dto.setPublishingDay(entity.getPublishingDay());
 		
-		if(entity.getAppliedOffersList() != null) {
-			dto.setAppliedOffersList(transformer.toDTOList(entity.getAppliedOffersList()));
-		}
+//		if(entity.getAppliedOffersList() != null) {
+//			dto.setAppliedOffersList(transformer.toDTOList(entity.getAppliedOffersList()));
+//		}
 		return dto;
 	}
 
@@ -33,9 +33,9 @@ public class OfferTransformer extends AbstractTransformers<OfferDTO, Offer> {
 		entity.setPosition(dto.getPosition());
 		entity.setPublishingDay(dto.getPublishingDay());
 		
-		if(dto.getAppliedOffersList() != null) {
-			entity.setAppliedOffersList(transformer.toEntityList(dto.getAppliedOffersList()));
-		}
+//		if(dto.getAppliedOffersList() != null) {
+//			entity.setAppliedOffersList(transformer.toEntityList(dto.getAppliedOffersList()));
+//		}
 		
 		
 		return entity;

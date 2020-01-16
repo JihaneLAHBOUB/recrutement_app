@@ -1,16 +1,11 @@
 package com.everis.recrutement.repository.entity;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Offer {
@@ -23,9 +18,9 @@ public class Offer {
 	private LocalDate publishingDay;
 	private String position;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "offer_id")
-	private List<AppliedOffer> appliedOffersList;
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinColumn(name = "offer_id")
+//	private List<AppliedOffer> appliedOffersList;
 
 	public Offer() {
 		super();
@@ -80,18 +75,18 @@ public class Offer {
 		this.position = position;
 	}
 
-	public List<AppliedOffer> getAppliedOffersList() {
-		return appliedOffersList;
-	}
-
-	public void setAppliedOffersList(List<AppliedOffer> appliedOffers) {
-		this.appliedOffersList = appliedOffers;
-	}
+//	public List<AppliedOffer> getAppliedOffersList() {
+//		return appliedOffersList;
+//	}
+//
+//	public void setAppliedOffersList(List<AppliedOffer> appliedOffers) {
+//		this.appliedOffersList = appliedOffers;
+//	}
 
 	@Override
 	public String toString() {
 		return "Offer [id=" + id + ", offerName=" + offerName + ", description=" + description + ", publishingDay="
-				+ publishingDay + ", position=" + position + ", appliedOffers=" + appliedOffersList + "]";
+				+ publishingDay + ", position=" + position +  "]";
 	}
 
 }
